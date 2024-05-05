@@ -87,7 +87,7 @@ To embed LaTeX formulae into body text, use dollar sign to wrap the formula. \
 ### 独立公式块
 插入独立的LaTeX公式块(单行或者连续多行), 需要在公式块的首行前和末行后, 分别另起一行, 行内包含两个"美元符号". 
 To insert standlone LaTeX formula blocks (single line or continuous multiple lines), insert standlone line consisting with two dollar signs before and after the entire formula block. \
-例如: 关于 $x$ 的一元二次方程 $$ a x^2 + b x + c = 0 ~ (a \ne 0) $$ 的两个复数根为 $$ x_{1, 2} = {{- b \pm \sqrt{b^2 - 4 a c}} \over {2 a}} $$. 
+例如: 关于 $x$ 的一元二次方程 $$a x^2 + b x + c = 0 ~ (a \ne 0)$$ 的两个复数根为 $$x_{1, 2} = {{- b \pm \sqrt{b^2 - 4 a c}} \over {2 a}}$$. 
 
 ## 引用块 / Referrence Blocks
 > 第1级引用(一行以单个">"号打头, 后接一个半角空格). 
