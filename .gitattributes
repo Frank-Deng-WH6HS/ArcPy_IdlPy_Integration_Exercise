@@ -1,0 +1,37 @@
+*.ipynb linguist-language=Python
+*.py linguist-language=Python
+*.pyc linguist-language=Python
+
+*.pro linguist-language=IDL
+*.sav linguist-language=IDL
+
+# General vector data
+*.kml linguist-language=XML # Keyhole Markup Language
+*.kmz binary # Zipped Keyhole Markup Language
+
+# General Raster data
+*.tif binary # General TIFF Raster Data
+*.tfw binary # General TIFF Georeferrence Data
+*.h5 binary # General HDF-5 Raster Data
+*.dxf binary # General Vector Data(Autodesk Exchangable File)
+*.obj binary # Wavefront Vector Data
+*.las binary # General LiDar Point Cloud Data
+
+# ESRI ArcGIS specific format
+*.shp binary # ArcGIS Vector Data
+*.prj binary # ArcGIS Projection description
+*.bsq binary # ArcGIS Band-Sequencial Raster
+*.bil binary # ArcGIS Band-Interleaved-by-Line Raster
+*.bip binary # ArcGIS Band-Interleaved-by-Pixel Raster
+*.ovr binary # ArcGIS Pyramid for rasters
+
+# Exelis ENVI specific format
+*.dat binary # ENVI Raster Data
+*.enp binary # ENVI Pyramid for rasters
+*.hdr binary # ENVI Metadata for rasters
+
+# Zondy MapGIS specific format
+*.wt binary # MapGIS Point data
+*.wl binary # MapGIS Segment data
+*.wp binary # MapGIS Polygon data
+*.msi binary # MapGIS Raster data
