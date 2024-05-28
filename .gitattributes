@@ -5,17 +5,17 @@
 *.pro linguist-language=IDL
 *.sav linguist-language=IDL
 
-# General vector data
+# General Vector data
 *.kml linguist-language=XML # Keyhole Markup Language
 *.kmz binary # Zipped Keyhole Markup Language
+*.dxf binary # General Vector Data(Autodesk Exchangable File)
+*.obj binary # Wavefront Vector Data
+*.las binary # General LiDar Point Cloud Data
 
 # General Raster data
 *.tif binary # General TIFF Raster Data
 *.tfw binary # General TIFF Georeferrence Data
 *.h5 binary # General HDF-5 Raster Data
-*.dxf binary # General Vector Data(Autodesk Exchangable File)
-*.obj binary # Wavefront Vector Data
-*.las binary # General LiDar Point Cloud Data
 
 # ESRI ArcGIS specific format
 *.shp binary # ArcGIS Vector Data
