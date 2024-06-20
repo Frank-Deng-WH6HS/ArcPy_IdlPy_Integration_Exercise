@@ -60,3 +60,32 @@
 |`Anaconda`发行版<br>`Anaconda` system release version|`anaconda 2019.10`|
 |`ArcGIS`发行版<br>`ArcGIS` release version|`ArcGIS Desktop 10.5`|
 |`ENVI`发行版<br>`ENVI` release version|`ENVI 5.3`|
+
+### 配置`arcpy` `idlpy`集成环境 / Configure Integrated Environment of `arcpy` and `idlpy`
+
+#### 确定`ArcGIS`及其`python`解释器安装路径 / Verify Installation Path of `ArcGIS` and Its `python` Interpreter
+
+`ArcGIS Desktop 10.x`在Windows系统中安装时, 安装向导会在准备阶段分两步指定`ArcGIS`主软件, 及其`python`解释器的安装目录, 这两个目录可能不同. 因此, 需要将二者区分开来. 需要确定 **~~`ArcGIS`的~~`python`解释器**所在目录以完成后续操作. \
+During installation of `ArcGIS Desktop 10.x` on Windows, installation wizard will assign directories of `ArcGIS` master product, and its `python` interpreter, in two steps separately. Directories above may be different and need to be distinguished. To archive further operations, developers are supposed to verify directory in which **the `python` interpreter of `ArcGIS`** locates. 
+
+在`Anaconda prompt`命令行中, 将 **~~`ArcGIS`的~~`python`解释器**所在目录设置为临时变量. \
+In `Anaconda prompt`, set a temporary to store the path of **the `python` interpreter of `ArcGIS`**. 
+
+> [!NOTE]
+> 本文档中的绝对路径**仅供参考**. 请以开发用机上`python`解释器的实际安装路径为准. 
+>
+> Absolute paths in current document are FOR REFERENCE ONLY. Please consult installation path of `python` interpreter *de facto*. 
+
+```bash
+set pyarcgis=D:\python27\ArcGIS10.5
+```
+
+> [!IMPORTANT]
+> 临时变量的值仅在**当前命令行会话**中有效, 命令行关闭后将被清理或者复原. 
+>
+> 执行上述命令后, 请勿关闭命令行界面, 以便在后续命令中继续使用临时变量. 
+>
+> Values of temporary variables are valid in CUTTENT CLI SESSION ONLY and will be cleared or restored after closing the console. 
+>
+> After excuting command above, do NOT close CLI, so that variables can be reused in following commands. 
+
