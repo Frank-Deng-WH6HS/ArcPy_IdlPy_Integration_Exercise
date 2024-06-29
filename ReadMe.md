@@ -61,7 +61,7 @@
 |`ArcGIS`发行版<br>`ArcGIS` release version|`ArcGIS Desktop 10.5`|
 |`ENVI`发行版<br>`ENVI` release version|`ENVI 5.3`|
 
-### 配置`arcpy` `idlpy`集成环境 / Configure Integrated Environment of `arcpy` and `idlpy`
+### 配置`arcpy`, `idlpy`集成环境 / Configure Integrated Environment of `arcpy` and `idlpy`
 
 本项目通过`anaconda`环境管理器, 创建一个名为`arcpy_idlpy_x32`的子环境, 集成`arcpy`和`idlpy`以供二次开发使用. 上述二次开发接口对接的软件具有以下特征: \
 This repository creates an environment named `arcpy_idlpy_x32` via `anaconda` environment manager, which intergrates `arcpy` and `idlpy` for secondary development. Softwares docked by interfaces above contains features as follow: 
