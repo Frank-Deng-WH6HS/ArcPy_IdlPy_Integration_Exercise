@@ -1,4 +1,5 @@
-*.ipynb linguist-language=Jupyter-notebook
+Python3_Tutorial/**.ipynb linguist-vendored
+
 *.py linguist-language=Python
 *.pyc linguist-language=Python
 
