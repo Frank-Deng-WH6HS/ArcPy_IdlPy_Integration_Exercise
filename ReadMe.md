@@ -43,12 +43,12 @@
     * `pandas`
 * `ArcGIS Desktop`的`Python 2.x`接口. \
     `Python 2.x` interface of `ArcGIS Desktop`. 
-    * `arcpy`, `archook`
+    * `arcpy`
 * `IDL` / `ENVI`的`Python 2.x`接口 (Python to IDL Bridge). \
     `Python 2.x` interface of `IDL` / `ENVI` (Python to IDL Bridge). 
     * `idlpy`
     
-## 运行环境信息 / Information of Environment for Excution
+## 运行环境信息 / Information of Environment for Execution
 
 ### 系统和程序包环境 / Environment of System and Packages
 
@@ -90,9 +90,9 @@ During installation of `ArcGIS Desktop 10.x` on Windows, installation wizard wil
 In `Anaconda prompt`, set a temporary variable to store the path of **the `python` interpreter of `ArcGIS`**. 
 
 > [!NOTE]
-> 本文档中以**绝对路径**表示的安装路径**仅供参考**. 请以开发用机上`python`解释器的实际安装路径为准. 
+> 本文档中以**绝对路径**(以盘符开头)表示的安装路径**仅供参考**. 请以开发用机上`python`解释器的实际安装路径为准. 
 >
-> In current document, installation paths represented as ABSOLUTE paths are FOR REFERENCE ONLY. Please consult installation path of `python` interpreter *de facto*. 
+> In current document, installation paths represented as **ABSOLUTE paths** (beginning with drive letter) are **FOR REFERENCE ONLY**. Please consult installation path of `python` interpreter *de facto*. 
 
 ```bash
 set pyarcgis=D:\python27\ArcGIS10.5
@@ -107,7 +107,25 @@ set pyarcgis=D:\python27\ArcGIS10.5
 >
 > After excuting command above, do NOT close CLI, so that variables can be reused in following commands. Further operations will be executed in THE SAME CONSOLE. 
 
-#### 确定`anaconda`安装路径
+#### 确定`IDL`安装路径 / Verify Installation Path of `IDL` 
+
+在`Anaconda prompt`命令行中, 将`IDL`安装目录设置为临时变量. \
+In `Anaconda prompt`, set a temporary variable to store the installation path of `IDL` interpreter. 
+
+```bash
+set idl=D:\Exelis\IDL85
+```
+
+> [!NOTE]
+> 上述路径**不是IDL的解释器**(`idl.exe`或者`idlrt.exe`)所在的路径. 
+>
+> 路径下包含`bin`, `examples`, `external`, `help`, `lib`, `resource`等子目录. 
+>
+> Path above is **NOT** the path where **the interpreters of IDL** (`idl.exe` or `idlrt.exe`) locate. 
+>
+> This path contains subdirectories including `bin`, `examples`, `external`, `help`, `lib`, `resource`. 
+
+#### 确定`anaconda`安装路径 / Verify Installation Path of `anaconda`
 
 在`Anaconda prompt`命令行中, 将`anaconda`安装目录设置为临时变量. \
 In `Anaconda prompt`, set a temporary variable to store the installation path of `anaconda`. 
@@ -116,7 +134,7 @@ In `Anaconda prompt`, set a temporary variable to store the installation path of
 set anacon=D:\Anaconda3
 ```
 
-#### 建立并初始化环境
+#### 建立并初始化环境 / Create and Initiallize Environment
 
 1. 为建立新环境初始化`anaconda`系统参数. \
     Initialize parameters of `anaconda` for creation of new environment. 
@@ -155,15 +173,70 @@ mklink pyparsing.py %pyarcgis%\Lib\site-packages\pyparsing.py
 mklink pyparsing.pyc %pyarcgis%\Lib\site-packages\pyparsing.pycpytz
 mklink cycler.py %pyarcgis%\Lib\site-packages\cycler.py
 mklink cycler.pyc %pyarcgis%\Lib\site-packages\cycler.pyc
+```
+
+5. 将`arcpy`的路径配置文件链接到新环境下. \
+    Link path configuration file of `arcpy` to new environment. 
+
+```bash
 mklink Desktop10.5.pth %pyarcgis%\Lib\site-packages\Desktop10.5.pth
 ```
 
-5. 将新环境注册为`ipython`内核, 以便与`base`环境下的`Jupyter notebook`一同使用. \
+6. 在新环境下建立`idlpy`的路径配置文件. \
+    Create path configuration file of `idlpy` in new environment. 
+
+```bash
+echo %idl%\bin\bin.x86 >IDL8.5.pth
+echo %idl%\lib\bridges >>IDL8.5.pth
+```
+
+7. 将新环境注册为`ipython`内核, 以便与`base`环境下的`Jupyter notebook`一同使用. \
     Register new environment as an `ipython` kernel for use with `Jupyter notebook` in `base` environment. 
 
 ```bash
 pip install backports.functools_lru_cache
 ipython kernelspec install-self
+```
+> [!NOTE]
+> 如果内核注册不成功(发生报错), 一般是因为`pip`未能向环境内成功安装上述库, 如遇上述现象, 需要再通过`conda`安装该库. 
+>
+> The faliure of kernel registration is generally caused by faliure of installation of library above via `pip`, In case of phenomenon above, it is required to install this library via `conda` again. 
+>
+> ```bash
+> conda install backports.functools_lru_cache
+> ```
+
+8. 完成新环境配置. \
+    Finish configuration of new environment. 
+
+```
 conda deactivate
 set CONDA_FORCE_32BIT=.
+```
+
+## 相关程序包的使用 / Usage of Relative Packages
+
+### 使用集成环境中的部分数据分析和科学计算相关库 / Use Libraries for Data Analysis and Scientific Computation in Integrated Environment
+
+对应的`import`语句需要重复调用多次, 才可正常导入模块. 需要在代码开头声明以下语句: \
+Only by invoking corresponding `import` statements repeatedly can modules be imported properly. It is required to declare following statements at the beginning of your code: 
+
+```python
+module_imported = False; 
+while not(module_imported):
+    try: 
+        import numpy, scipy, sympy, pandas; 
+    except SyntaxError: 
+        continue; 
+    else: 
+        break; 
+```
+
+### 使用`arcpy`和`idlpy` / Use `arcpy` and `idlpy`
+
+直接使用一次`import`语句即可. \
+Directly use `import` statements once. 
+
+```python
+import arcpy, idlpy; 
 ```
