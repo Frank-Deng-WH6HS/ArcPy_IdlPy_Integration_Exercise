@@ -2,3 +2,6 @@
 *.bak
 
 *-checkpoint.ipynb
+
+Zotero_Record/*/
+Zotero_Record/zotero.sqlite?*
