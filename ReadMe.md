@@ -33,12 +33,9 @@
     
 ### 本项目主要涉及的第三方`Python`库 / Third-Party `Python` Libraries Mentioned in This Repository
 
-* 数值计算, 符号计算库. \
-    Libraries for numerical and symbolic computation. 
-    * `numpy`
-    * `sympy`
 * 数学建模, 数据挖掘, 通用科学数据计算相关库. \
     Libraries for mathematical modeling, data mining and general scientific data computation. 
+    * `numpy`
     * `scipy`
     * `pandas`
 * `ArcGIS Desktop`的`Python 2.x`接口. \
@@ -166,7 +163,6 @@ conda install notebook ipykernel numpy==1.9.3 six==1.10.0 tornado==4.5.3 -y
 chdir /D %anacon%\envs\arcpy_idlpy_x32\Lib\site-packages
 mklink /D scipy %pyarcgis%\Lib\site-packages\scipy
 mklink /D pandas %pyarcgis%\Lib\site-packages\pandas
-mklink /D sympy %pyarcgis%\Lib\site-packages\sympy
 mklink /D matplotlib %pyarcgis%\Lib\site-packages\matplotlib
 mklink /D pytz %pyarcgis%\Lib\site-packages\pytz
 mklink pyparsing.py %pyarcgis%\Lib\site-packages\pyparsing.py
@@ -225,7 +221,7 @@ Only by invoking corresponding `import` statements repeatedly can modules be imp
 module_imported = False; 
 while not(module_imported):
     try: 
-        import numpy, scipy, sympy, pandas; 
+        import numpy, scipy, pandas; 
     except SyntaxError: 
         continue; 
     else: 
