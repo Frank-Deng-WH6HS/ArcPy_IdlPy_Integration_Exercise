@@ -2,6 +2,7 @@
 *.bak
 
 *-checkpoint.ipynb
+/**/__pycache__/
 
 Zotero_Record/*/
 Zotero_Record/zotero.sqlite?*
