@@ -27,10 +27,13 @@
     Libraries for processing of character strings and text files. 
     * `string`, `re`
     * `sys`, `os`, `io`
-* 与GIS/RS有关的可交换文本文件导入导出, 如`JSON`/`GeoJSON`, `XML`/`KML`. \
-    Libraries for import and export of GIS/RS-related exchangable textual files, e.g. `JSON`/`GeoJSON`, `XML`/`KML`
-    * `json`, `xml`
-    
+* 与GIS/RS有关的可交换文本文件导入导出, 如`CSV`, `JSON`/`GeoJSON`, `XML`/`KML`. \
+    Libraries for import and export of GIS/RS-related exchangable textual files, e.g. `CSV`, `JSON`/`GeoJSON`, `XML`/`KML`
+    * `csv`, `json`, `xml`
+* `Sqlite`数据库读写. \
+    Libraries for reading and writing `Sqlite` database. 
+    * `sqlite3`
+   
 ### 本项目主要涉及的第三方`Python`库 / Third-Party `Python` Libraries Mentioned in This Repository
 
 * 数学建模, 数据挖掘, 通用科学数据计算相关库. \
