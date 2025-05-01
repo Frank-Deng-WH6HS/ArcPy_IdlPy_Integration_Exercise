@@ -168,6 +168,7 @@ mklink /D scipy %pyarcgis%\Lib\site-packages\scipy
 mklink /D pandas %pyarcgis%\Lib\site-packages\pandas
 mklink /D matplotlib %pyarcgis%\Lib\site-packages\matplotlib
 mklink /D pytz %pyarcgis%\Lib\site-packages\pytz
+mklink /D dateutil %pyarcgis%\Lib\site-packages\dateutil
 mklink pyparsing.py %pyarcgis%\Lib\site-packages\pyparsing.py
 mklink pyparsing.pyc %pyarcgis%\Lib\site-packages\pyparsing.pycpytz
 mklink cycler.py %pyarcgis%\Lib\site-packages\cycler.py
