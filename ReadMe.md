@@ -23,9 +23,9 @@
     * `math`, `cmath`
     * `decimal`, `fractions`
     * `statistics`, `random`
-* 字符串和文本文件处理相关库. \
-    Libraries for processing of character strings and text files. 
-    * `string`, `re`
+* 字符串, 字节串和文件处理相关库. \
+    Libraries for processing of character strings, byte strings and files. 
+    * `string`, `struct`, `re`
     * `sys`, `os`, `io`
 * 与GIS/RS有关的可交换文本文件导入导出, 如`CSV`, `JSON`/`GeoJSON`, `XML`/`KML`. \
     Libraries for import and export of GIS/RS-related exchangable textual files, e.g. `CSV`, `JSON`/`GeoJSON`, `XML`/`KML`
